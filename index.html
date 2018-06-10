@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DevTools</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+        <link rel='stylesheet' media='screen and (max-width: 700px)' href='narrow.css'/>
+        <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='medium.css'/>
+        <link rel='stylesheet' media='screen and (min-width: 901px)' href='wide.css'/>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    </head>
+
+    <body>
+        <div class="logInContainer">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <center><div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text"><strong>DevTools</strong></h2>
+                </div></center>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__supporting-text">
+                        <center><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="email" id="txtEmail">
+                            <label class="mdl-textfield__label" for="txtEmail">Email</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="password" id="txtPassword">
+                            <label class="mdl-textfield__label" for="txtPassword">Password</label>
+                        </div></center>
+                        <center><div class="logIn">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btnLogIn">Log In</button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btnSignUp">Sign Up</button>
+                        </div></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+       </div>
+        <script src="login.js"></script>  
+        
+
+    </body>
+</html>
