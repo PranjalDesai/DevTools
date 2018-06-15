@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<!-- Header & Imports-->
+	<head>
+		<meta charset="utf-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   	<title>DevTools</title>
+   	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+   	<link rel='stylesheet' media='screen and (max-width: 700px) and (min-width: 390px)' href='narrow.css'/>
+		<link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='medium.css'/>
+   	<link rel='stylesheet' media='screen and (min-width: 901px)' href='wide.css'/>
+   	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+   	<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+	</head>
+<!-- End Header & Imports-->
+	<body>
+
+<!-- Display Project Title -->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+		 		<center>
+					<div class="mdl-layout__header-row">
+						<!-- Title -->
+						<span class="mdl-layout-title" id="projNames"></span>
+		 			</div>
+	 			</center>
+			</header>
+<!-- End Display Project Title -->
+<!-- Start Navigation Bar -->
+		<div class="mdl-layout__drawer">
+	 		<span class="mdl-layout-title" id="navigationTitle"></span>
+	 		<div class="mdl-card__actions mdl-card--border">
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" id="btnDashboard">Dashboard</a>
+				<a class="mdl-navigation__link" id="btnProfile">Profile</a>
+	 		</nav>
+	 		</div>
+	 		<div class="mdl-card__actions mdl-card--border">
+		 		<nav class="mdl-navigation">
+					<a class="mdl-navigation__link" id="btnLogOut">Log Out</a>
+		 		</nav>
+	 		</div>
+		</div>
+<!-- End Navigation Bar-->
+<!-- Main Body Content Div-->
+		<main class="mdl-layout__content">
+			<div class="page-content">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="MessageClick">Messages</button>
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="materialUpload">
+					<i class="material-icons">cloud_upload</i>
+			 	</button>
+				<input type="file" value="upload" id="fileupload" />
+				
+<!-- Messages Div Content -->
+				<div class="Messages" id="Messages">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="messageClose">
+					Close Messages      <i class="material-icons" id="mIcon">cancel</i>
+					</button>
+					<center>
+						<ul class="demo-list-two mdl-list" id="messagesView">
+						</ul>
+					</center>
+					<center>
+						<div id="inputBox">
+							<div class="mdl-textfield mdl-js-textfield" id="textArea">
+								<input class="mdl-textfield__input" type="text" id="textField" onfocus="this.value=''">
+								<label class="mdl-textfield__label" id="textLabel" for="textField">Enter Message...</label>
+							</div>
+							<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="messageSend">
+								<i class="material-icons">send</i>
+							</button>
+						</div>
+					</center>
+				</div>
+<!-- End Messages Content-->
+
+<!-- Start Add Sprint-->
+				<div class="AddSprint" id="AddSprint">
+					<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+						<center><div class="mdl-card__title">
+							<h2 class="mdl-card__title-text"><strong>Create a Sprint</strong></h2>
+						</div></center>
+						<div class="mdl-card__actions mdl-card--border">
+							<div class="mdl-card__supporting-text">
+								<center>
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input class="mdl-textfield__input" type="text" id="txtSName">
+										<label class="mdl-textfield__label" for="txtSName">Sprint Name</label>
+					  				</div>
+					  				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input class="mdl-textfield__input" type="number" id="txtSDuration" min="1" max="60">
+										<label class="mdl-textfield__label" for="txtSDuration">Sprint Duration (Weeks)</label>
+					  				</div>
+					  			<center>
+								<div class="profile">
+									<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btnSubmitSprint">Submit</button>
+									<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btnCancel">Cancel</button>
+
+					  			</div>
+								</center>
+					  			<br>
+					  			<br>
+				 			</div>
+						</div>
+					</div>
+				</div>
+<!-- End Add Sprint-->
+
+
+<!-- Start Add Task -->
+				<div class="AddTask" id="AddTask">
+					<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+						<center><div class="mdl-card__title">
+							<h2 class="mdl-card__title-text"><strong>Create a Task</strong></h2>
+						</div></center>
+						<div class="mdl-card__actions mdl-card--border">
+							<div class="mdl-card__supporting-text">
+								<center>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="text" id="txtTASKName">
+									<label class="mdl-textfield__label" for="txtTASKName">Task Name</label>
+								</div>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="text" id="txtTASKUser">
+									<label class="mdl-textfield__label" for="txtTASKUser">Enter Project User</label>
+								</div>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="number" id="txtTASKDuration" min="1" max="100">
+									<label class="mdl-textfield__label" for="txtTASKDuration">Est. Completion Time (HRS) </label>
+								</div>
+								<div class="mdl-textfield mdl-js-textfield">
+									<textarea class="mdl-textfield__input" type="text" rows= "3" id="txtTASKDescription" ></textarea>
+									<label class="mdl-textfield__label" for="txtTASKDescription">Task Description...</label>
+								</div>
+								<center>
+									<div class="profile">
+										<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btnSubmitTask">Submit</button>
+										<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btnCancelTask">Cancel</button>
+									</div>
+								</center>
+								<br>
+								<br>
+							</div>
+						</div>
+					</div>
+				</div>
+<!-- End Add Task -->
+
+<div class="ProjectDetails" id="ProjectDetails">
+	<div class="mdl-spinner mdl-js-spinner" id="spinner"></div>
+<!-- Start Tables Code -->
+					<center>
+					<div class="mdl-grid" id="projView">
+
+
+						<div class="mdl-cell mdl-cell--6-col">
+								  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+								<div class="mdl-card__title" id="dashTitle">
+									<h2 class="mdl-card__title-text"><b>Description</b></h2>
+								</div>
+								<div class="mdl-card__actions mdl-card--border">
+									<div class="mdl-card__supporting-text" id="projectDescription">
+									</div>
+								</div>
+							</div>
+							 </div>
+
+<!-- Display Tasks Table-->
+						<div class="mdl-cell mdl-cell--6-col">
+  						<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  						<div class="mdl-card__title" id="dashTitle">
+	  						<h2 class="mdl-card__title-text"><b>Tasks</b></h2>
+  						</div>
+  						<div class="mdl-card__actions mdl-card--border">
+	  						<table class="mdl-data-table mdl-js-data-table" id="dashTable">
+		  						<thead>
+			  						<tr>
+				  						<th class="mdl-data-table__cell--non-numeric">Name</th>
+				  						<th class="mdl-data-table__cell--non-numeric">Task Link</th>
+				  						<th class="mdl-data-table__cell--non-numeric">Assigned</th>
+				  						<th class="mdl-data-table__cell--non-numeric">Time Left</th>
+				  						<th class="mdl-data-table__cell--non-numeric">Status</th>
+			  						</tr>
+		  						</thead>
+		  						<tbody id="taskData">
+	  							</tbody>
+  							</table>
+  							<br>
+  						</div>
+					</div>
+				</div>
+
+<!-- End Display Task Table-->
+
+<!-- Display Sprints Table-->
+				<div class="mdl-cell mdl-cell--6-col">
+  					<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  						<div class="mdl-card__title" id="dashTitle">
+	  						<h2 class="mdl-card__title-text"><b>Sprints</b></h2>
+  						</div>
+  						<div class="mdl-card__actions mdl-card--border">
+	  						<table class="mdl-data-table mdl-js-data-table" id="dashTable">
+		  						<thead>
+			  						<tr>
+				  						<th class="mdl-data-table__cell--non-numeric">Sprint Name</th>
+				  						<th class="mdl-data-table__cell--non-numeric">Sprint Link</th>
+										<th class="mdl-data-table__cell--non-numeric">Sprint Duration</th>
+			  						</tr>
+		  						</thead>
+		  						<tbody id="sprintData">
+	  							</tbody>
+  							</table>
+  							<br>
+  							<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="newSprint"> Add New Sprint
+							</button>
+  						</div>
+					</div>
+				</div>
+
+<!-- End Sprints Task Table-->
+
+<!-- Display Stories Table-->
+				<div class="mdl-cell mdl-cell--6-col">
+  					<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  						<div class="mdl-card__title" id="dashTitle">
+	  						<h5 class="mdl-card__title-text"><b>User Stories</b></h5>
+  						</div>
+  						<div class="mdl-card__actions mdl-card--border">
+	  						<table class="mdl-data-table mdl-js-data-table" id="dashTable">
+		  						<thead>
+			  						<tr>
+				  						<th class="mdl-data-table__cell--non-numeric">Story Name</th>
+				  						<th class="mdl-data-table__cell--non-numeric">Story Link</th>
+			  						</tr>
+		  						</thead>
+		  						<tbody id="storyData">
+	  							</tbody>
+  							</table>
+  							<br>
+
+  						</div>
+					</div>
+				</div>
+<!-- End Display Stories Table-->
+				</div>
+			</center>
+
+<!-- Start Storage-->
+<br>
+<br>
+<center><div class="mdl-cell mdl-cell--12-col">
+		  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		<div class="mdl-card__title" id="dashTitle">
+			<h2 class="mdl-card__title-text"><b>Storage</b></h2>
+		</div>
+		<div class="mdl-card__actions mdl-card--border">
+				<table class="mdl-data-table mdl-js-data-table" id="dashTable">
+				<thead>
+					<tr>
+							<th class="mdl-data-table__cell--non-numeric">File Name</th>
+							<th class="mdl-data-table__cell--non-numeric">Download Link</th>
+					</tr>
+				</thead>
+				<tbody id="storageData">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	 </div></center>
+ </div>
+ <br>
+ <br>
+<!-- End Storage -->
+
+<!-- Start SnackBar -->
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+		<div class="mdl-snackbar__text"></div>
+		<button class="mdl-snackbar__action" type="button"></button>
+	</div>
+<!-- End SnackBar-->
+			</div>
+	  	</main>
+	</div>
+
+    <script src="proj.js"></script>
+</body>
+</html>
