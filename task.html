@@ -1,0 +1,86 @@
+<!-- Task HTML content -->
+<!-- Display Task info, update task status-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DevTools</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+        <link rel='stylesheet' media='screen and (max-width: 700px) and (min-width: 390px)' href='narrow.css'/>
+        <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='medium.css'/>
+        <link rel='stylesheet' media='screen and (min-width: 901px)' href='wide.css'/>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+<body>
+	<!-- Always shows a header, even in smaller screens. -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+		    <center><div class="mdl-layout__header-row">
+		      <!-- Title -->
+		      <span class="mdl-layout-title" id="TaskNames"></span>
+		    </div></center>
+		</header>
+	  	<div class="mdl-layout__drawer">
+		    <span class="mdl-layout-title" id="navigationTitle"></span>
+		    <div class="mdl-card__actions mdl-card--border">
+			    <nav class="mdl-navigation">
+			    	<a class="mdl-navigation__link" id="btnDashboard">Dashboard</a>
+			    	<a class="mdl-navigation__link" id="btnProfile">Profile</a>
+			    </nav>
+		    </div>
+		    <div class="mdl-card__actions mdl-card--border">
+			    <nav class="mdl-navigation">
+			      <a class="mdl-navigation__link" id="btnLogOut">Log Out</a>
+			    </nav>
+		    </div>
+	  	</div>
+	  	<main class="mdl-layout__content">
+	    	<div class="page-content">
+		    	<div class="USDetails" id="USDetails">
+			    	<center><div class="mdl-cell mdl-cell--12-col">
+	                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	  						<div class="mdl-card__title" id="dashTitle">
+	    						<h2 class="mdl-card__title-text"><b>Description</b></h2>
+	  						</div>
+	  						<div class="mdl-card__actions mdl-card--border">
+	  							<div class="mdl-card__supporting-text" id="TaskDescription">
+    							</div>
+  							</div>
+						</div>
+	                </div></center>
+		    	</div>
+
+		    	<center><div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		               	<center><div class="mdl-card__title">
+		                   	<h2 class="mdl-card__title-text"><strong>Update Task</strong></h2>
+		               	</div></center>
+		               	<div class="mdl-card__actions mdl-card--border">
+	                    	<div class="mdl-card__supporting-text">
+	                        	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	                            	<input class="mdl-textfield__input" type="number" id="txtTaskDuration" min="1" max="150">
+	                            	<label class="mdl-textfield__label" for="txtTaskDuration">Hours Completed</label>
+	                        	</div>
+			                    <center><div class="profile">
+			                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="btnUpdate">Update</button>
+			                    </div></center>
+
+			                </div>
+		              	</div>
+	            </div></center>
+
+				<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+            		<div class="mdl-snackbar__text"></div>
+          			<button class="mdl-snackbar__action" type="button"></button>
+       			</div>
+			</div>
+	  	</main>
+	</div>
+
+    <script src="task.js"></script>
+</body>
+</html>
