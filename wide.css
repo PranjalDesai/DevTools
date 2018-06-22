@@ -1,0 +1,291 @@
+body{
+  width: 100%;
+	background: #E9E9E9;
+}
+
+.demo-card-wide.mdl-card {
+  width: 75%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.mdl-card__title-text {
+  color: #009688;
+  font-size: 35px;
+  margin: auto;
+  text-align: center;
+}
+
+#materialAdd{
+  color: #fff;
+  background: #88BBD6;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 100;
+}
+
+#materialCancel{
+  color: #fff;
+  background: #88BBD6;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 100;
+}
+
+#navigationTitle{
+  font-size: 15px;
+  color: #000;
+}
+.googleDiv {
+	padding-top: 10px;
+}
+
+#betTitle{
+  color: #88BBD6;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+#poolBetTitle{
+  color: #fff;
+  font-size: 30px;
+  margin-top: 2%;
+  text-align: center;
+  background: #88BBD6;
+}
+
+.logInContainer {
+  width: 50%;
+  height: 50%;
+	position: absolute;
+  margin-top: 12.5%;
+  margin-left: 32%;
+}
+
+.AddProject {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 31%;
+}
+
+.AddSprint{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 31%;
+}
+
+.AddStory{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 31%;
+}
+
+.AddTask{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 31%;
+}
+
+.Pool {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  margin-top: 6%;
+  margin-left: 32%;
+}
+
+.titleBets{
+  margin-top: 2%;
+}
+
+#cardText {
+  color: #000;
+  font-size: 15px;
+}
+
+#btnLogIn{
+  background-color: #009688;
+}
+
+#btnSignUp{
+  background-color: #009688;
+}
+
+#btnProfileSave{
+  background-color: #009688;
+}
+
+#btnDashToGo{
+  background-color: #009688;
+}
+
+#btnSubmit{
+  background-color: #009688;
+}
+
+#btnCancel{
+  background-color: #009688;
+}
+
+#btnSubmitSprint{
+  background-color: #009688;
+}
+
+#btnCancelSprint{
+  background-color: #009688;
+}
+
+#btnCancelTask{
+  background-color: #009688;
+}
+
+#btnSubmitTask{
+  background-color: #009688;
+}
+
+.Role{
+  font-size: 22px;
+}
+
+.profileContainer {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  margin-top: 5.5%;
+  margin-left: 31%;
+}
+
+#dashTable {
+  width: 100%;
+  height: 100%;
+}
+
+#dashTitle{
+  height: 75px;
+}
+
+
+#MessageClick{
+  color: #fff;
+  background: #4CAF50;
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  bottom: 0rem;
+  z-index: 100;
+  font-size: 30px;
+}
+
+#messageClose{
+  color: #fff;
+  background: #4CAF50;
+  position: fixed;
+  display: inline-block;
+  width: 100%;
+  height: 8%;
+  top: 4.6rem;
+  z-index: 100;
+  font-size: 30px;
+}
+
+#messageTitleText{
+  font-size: 20px;
+  margin-left: 0%;
+  color:  #3F51B5;
+}
+
+
+#messageText{
+  margin-left: 0%;
+  display: inherit;
+}
+#indiMessage{
+  padding-top: 10px;
+  background-color: #FFF;
+}
+
+#messagesView{
+  padding-top: 4%;
+  width: 50%;
+}
+
+#inputBox{
+  background-color: #3F51B5;
+  position: fixed;
+  width: 50%;
+  height: 8%;
+  left: 25%;
+  bottom: 0rem;
+  z-index: 100;
+  font-size: 30px;
+}
+
+#textArea{
+  width: 85%;
+}
+
+#textField{
+  color: #fff;
+}
+#textLabel{
+  color: #fff;
+}
+
+#materialUpload{
+  color: #fff;
+  background-color: #3F51B5;
+  position: fixed;
+  right: 2rem;
+  bottom: 5rem;
+  z-index: 100;
+}
+
+#spinner{
+  width: 75px;
+  height: 75px;
+  position: fixed;
+  right: 50%;
+  bottom: 50%;
+  z-index: 100;
+}
+
+#materialAdds{
+  color: #fff;
+  background: #3F51B5;
+  position: fixed;
+  right: 2rem;
+  bottom: 5rem;
+  z-index: 100;
+}
+
+#projectDescription{
+  text-align: left;
+}
+
+#SprintDescription{
+  text-align: left;
+}
+
+#USDescription{
+  text-align: left;
+}
+
+#TaskDescription{
+  text-align: left;
+}
