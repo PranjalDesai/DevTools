@@ -3,14 +3,14 @@
 (function() {
 
    // Initialize Firebase
-   var config = {
-      apiKey: "AIzaSyDTYxOvNttW9scHzpTN2bWe2S0oQ86iap8",
-      authDomain: "devtools-73ed5.firebaseapp.com",
-      databaseURL: "https://devtools-73ed5.firebaseio.com",
-      storageBucket: "devtools-73ed5.appspot.com",
-      messagingSenderId: "146302750750"
-   };
-   firebase.initializeApp(config);
+    var config = {
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        storageBucket: "",
+        messagingSenderId: ""
+    };
+    firebase.initializeApp(config);
 
     const btnLogOut = document.getElementById('btnLogOut');
     const btnDashboard = document.getElementById('btnDashboard');
