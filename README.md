@@ -24,7 +24,7 @@
 # How To Use
   - Create a new Firebase Project
   - Config your project for web
-  - Place the config details in all .js files and in the index.html file.
+  - Place the config details in all .js files and in the dashboard.html file.
 
 
 [Login][screen_1] | [Dashboard][screen_2] | 
